@@ -1,0 +1,27 @@
+# Core fine-tuning stack. Versions this pipeline currently runs on; earlier
+# versions of most of these work, but transformers >= 5 and peft >= 0.19 are
+# assumed by the merge path in merge_lora.py.
+torch>=2.6
+transformers>=5.5
+peft>=0.19
+trl>=1.8
+datasets>=5.0
+bitsandbytes>=0.49
+accelerate>=1.14
+safetensors>=0.7
+
+# Data / metrics
+pandas>=2.0
+pyarrow>=15.0
+numpy>=1.26
+scikit-learn>=1.4
+
+# Model download
+huggingface_hub>=0.30
+
+# eval_llamacpp.py only
+requests>=2.31
+
+# Linux only, install separately in their own environment:
+#   vllm            infer_vllm.py, eval_vllm_testset.py
+#   llmcompressor   quantize_awq.py
